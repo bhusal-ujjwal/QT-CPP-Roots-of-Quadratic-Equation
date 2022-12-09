@@ -57,8 +57,8 @@ double MainWindow:: calcRoots(){
 
     if(Discriminant>=0)
       {
-        X1 = (-B + sqrt(Discriminant))/ 2* A;
-        X2 = (-B - sqrt(Discriminant))/ 2* A;
+        X1 = (-B + sqrt(Discriminant))/ (2* A);
+        X2 = (-B - sqrt(Discriminant))/ (2* A);
       }
 
     ui->le_discriminant->setText(QString::number(Discriminant));
@@ -91,9 +91,10 @@ void MainWindow::on_btn_calc_clicked()
         A = a.toDouble();
         C = c.toDouble();
         Discriminant = d.toDouble();
-
-        calcRoots();
+        
+        
         calcDiscri();
+        calcRoots();
 
         //set discriminant to the line edit.
         ui->le_discriminant->setText(QString::number(Discriminant));
